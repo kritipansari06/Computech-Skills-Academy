@@ -1,15 +1,56 @@
 {
-  "buildCommand": "echo 'Static site - no build needed'",
+  "buildCommand": "echo 'Static site'",
   "outputDirectory": ".",
-  "headers": [
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
+      "source": "/gallery.html",
+      "destination": "/gallery.html"
+    },
+    {
+      "source": "/home.html",
+      "destination": "/home.html"
+    },
+    {
+      "source": "/courses.html",
+      "destination": "/courses.html"
+    },
+    {
+      "source": "/about-us.html",
+      "destination": "/about-us.html"
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/enroll-now.html",
+      "destination": "/enroll-now.html"
+    },
+    {
+      "source": "/webdev.html",
+      "destination": "/webdev.html"
+    },
+    {
+      "source": "/ai.html",
+      "destination": "/ai.html"
+    },
+    {
+      "source": "/digimarket.html",
+      "destination": "/digimarket.html"
+    },
+    {
+      "source": "/graphic-desg.html",
+      "destination": "/graphic-desg.html"
+    },
+    {
+      "source": "/tally.html",
+      "destination": "/tally.html"
+    },
+    {
+      "source": "/review.html",
+      "destination": "/review.html"
     }
   ]
 }
