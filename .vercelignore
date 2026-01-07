@@ -1,4 +1,0 @@
-# Keep media in the repo; manage large files with Git LFS instead of excluding them.
-**/desktop.ini
-
-# If you still want to exclude specific large files, add patterns here.
