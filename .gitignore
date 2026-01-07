@@ -29,3 +29,5 @@ build/
 # VIDEOS/ should be included
 # PICTURES/ should be included
 # images/ should be included
+.vercel
+.env*.local
