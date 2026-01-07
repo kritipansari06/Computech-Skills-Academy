@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us - Computech Skills Academy</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="shortcut icon" href="./PICTURES/csa logo.png" type="image/png">
+        <link rel="stylesheet" href="index.b.css">
+        <style>
+            :root {
+                --primary: #3a86ff;
+                --secondary: #ff006e;
+                --accent: #8338ec;
+                --light: #f8f9fa;
+                --dark: #212529;
+            }
+            
+            body {
+                font-family: 'Poppins', sans-serif;
+                background-color: white;
+                color: #a10032;
+                background-size: 400% 400%;
+                color: var(--dark);
+            }
+            
+            .contact-section {
+                background-color: #fdf0e4;
+                border-radius: 1rem;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                margin-bottom: 2rem;
+                transform: translateY(30px);
+            }
+
+            .contact-title {
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                color:#a10032;
+            }
+            
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 1.75rem;
+                margin-right: 1.25rem;
+                color: white;
+                position: relative;
+            }
+            
+            .contact-icon::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 50%;
+                background: inherit;
+                transform: scale(0);
+            }
+
+            .contact-link:hover .contact-icon::before {
+                transform: scale(1.17);
+                opacity: 0.3;
+            }
+            
+            .whatsapp {
+                background-color: #25D366;
+            }
+            
+            .email {
+                background-color: #EA4335;
+            }
+            
+            .phone {
+                background-color: #3498db;
+            }
+
+            .instagram {
+                background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            }
+
+            .facebook {
+                background-color: #1877f2;
+            }
+            
+            .map-marker {
+                background-color: #6c63ff;
+            }
+            
+            .contact-info {
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+            
+            .contact-link {
+                text-decoration: none;
+                color: var(--dark);
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.5rem;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .contact-link:hover {
+                color: var(--primary);
+                transform: translateX(10px);
+                background-color: rgba(58, 134, 255, 0.05);
+            }
+            
+            .contact-link:hover::before {
+                left: 100%;
+            }
+            
+            .contact-link:last-child {
+                margin-bottom: 0;
+            }
+            
+            .whatsapp-link {
+                text-decoration: none; 
+                color: inherit;
+            }
+            
+            .whatsapp-link:hover {
+                color: #25D366;
+            }
+            
+            footer {
+                background-color: var(--dark);
+                color: white;
+                text-align: center;
+                transform: translateY(20px);
+                font-size: 80%;
+                line-height: normal;
+            }
+            
+            @media (max-width: 576px) {
+                body {
+                    padding-top: 1rem;
+                }
+                
+                .academy-name {
+                    font-size: 1.8rem;
+                }
+                
+                .academy-tagline {
+                    font-size: 1rem;
+                }
+                
+                .course-card {
+                    margin-bottom: 1.5rem;
+                }
+                
+                .contact-section {
+                    padding: 1.5rem;
+                }
+                
+                .contact-icon {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 1.3rem;
+                    margin-right: 0.75rem;
+                }
+
+                .contact-info {
+                    font-size: 0.95rem;
+                }
+                
+                .contact-link {
+                    padding: 0.75rem 0.5rem;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0.5rem;
+                }
+            }
+            
+            @media (min-width: 577px) and (max-width: 768px) {
+                .academy-name {
+                    font-size: 2.2rem;
+                }
+                
+                .contact-info {
+                    font-size: 1rem;
+                }
+            }
+            
+            @media (min-width: 769px) and (max-width: 992px) {
+                .academy-name {
+                    font-size: 2.3rem;
+                }
+            }
+            
+            @media (min-width: 993px) and (max-width: 1200px) {
+                .academy-name {
+                    font-size: 2.4rem;
+                }
+            }
+            
+            @media (min-width: 1201px) {
+                .container {
+                    max-width: 1140px;
+                }
+            }
+            
+            .feature-list li span {
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            .contact-link div:last-child {
+                flex: 1;
+                min-width: 0;
+            }
+            
+            .contact-link small {
+                display: block;
+                word-wrap: break-word;
+            }
+
+            .back-to-top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                background-color: #fff8e8;
+                color: #a10032;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 999;
+            }
+
+            .back-to-top:hover {
+                background-color: #990d35;
+                color: #fff8e8;
+                transform: translateY(-3px);
+            }
+
+            .back-to-top.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-expand-lg custom-navbar container mt-3 container-fluid" >
+            <div class="container-fluid d-flex align-items-center">
+
+                <a class="navbar-brand d-flex align-items-center me-3" href="home.html">
+                    <img src="./PICTURES/logo.png" alt="Logo" />
+                </a>
+                <div class="d-flex flex-column me-auto">
+                    <span class="brand-text">Computech Skills</span>
+                    <span class="brand-text">Academy</span>
+                </div>
+
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                    <ul class="navbar-nav align-items-lg-center mt-3 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="enroll-now.html">Enroll Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h2 class="contact-title">Get in Touch</h2>
+
+                <div class="contact-link">
+                    <div class="contact-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <div class="contact-info">WhatsApp</div>
+                        <div>
+                            <a href="https://wa.me/918290735843" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                                +91 82907 35843
+                            </a> <br>
+                            <a href="https://wa.me/918290735849" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                                +91 82907 35849
+                            </a>
+                        </div>
+                        <small>Available 24/7</small>
+                    </div>
+                </div>
+
+                <a href="https://www.instagram.com/computechskillsacademy?igsh=MTRlYW4wdXY5YjdqbA==" target="_blank" class="contact-link">
+                    <div class="contact-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div>
+                        <div class="contact-info">Instagram</div>
+                        <div>#computechskillsacademylosal</div>
+                        <small>We post in every two weeks.</small>
+                    </div>
+                </a>
+
+                <a href="https://www.facebook.com/share/1783pRKNJt/" target="_blank" class="contact-link">
+                    <div class="contact-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div>
+                        <div class="contact-info">Facebook</div>
+                        <div>facebook.com/computechskillsacademylosal</div>
+                        <small>We're active daily</small>
+                    </div>
+                </a>
+                
+                <a href="mailto:computechskillsacademylosal@gmail.com" target="_blank" class="contact-link">
+                    <div class="contact-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <div class="contact-info">Email</div>
+                        <div>computechskillsacademylosal@gmail.com</div>
+                        <small>We typically respond within 24 hours</small>
+                    </div>
+                </a>
+
+                <div class="contact-link">
+                    <div class="contact-icon phone">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <div class="contact-info">Call Now</div>
+                        <div>
+                            <a href="tel:+918290735843" class="whatsapp-link">+91 82907 35843</a> <br>
+                            <a href="tel:+918290735849" class="whatsapp-link">+91 82907 35849</a>
+                        </div>
+                        <small>Support available 7 days a week</small>
+                    </div>
+                </div>
+
+                <a href="https://maps.app.goo.gl/HQmUEehSYcoUH2BC7" target="_blank" class="contact-link">
+                    <div class="contact-icon map-marker">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <div class="contact-info">Visit Us</div>
+                        <div>Losal, Sikar, Rajasthan, India</div>
+                        <small>View on Google Maps</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <button class="back-to-top" title="Go to top">
+            <i class="fa-solid fa-angles-up"></i>
+        </button>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-text m-0 p-1">
+                <p>Building tomorrow's tech professionals today</p>
+                <p>&copy; 2025 Computech Skills Academy. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    {
+                        pageLanguage: 'en',
+                        includedLanguages: 'en,hi',
+                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                    },
+                    'google_translate_element'
+                );
+            }
+        </script>
+        <script>
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/a825dfb9ae.js" crossorigin="anonymous"></script>
+    </body> 
+</html>

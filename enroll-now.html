@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Computech Skills Academy - Admission Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./PICTURES/csa logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #990D35;
+      --background: #FFF8E8;
+      --text: #333;
+    }
+
+    body {
+      background-color: var(--background);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem 1rem;
+      color: var(--text);
+    }
+
+    .form-wrapper {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(188, 12, 62, 0.723);
+      padding: 40px;
+      border-top: 8px solid var(--primary);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .form-control, .form-select {
+      border-radius: 12px;
+      padding: 12px 16px;
+      border: 2px solid #eee;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: none;
+    }
+
+    .btn-submit {
+      background-color: var(--primary);
+      color: var(--background);
+      font-weight: 600;
+      border: none;
+      padding: 14px;
+      border-radius: 50px;
+      width: 100%;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(153, 13, 53, 0.3);
+    }
+
+    .note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    @media (max-width: 576px) {
+      .form-wrapper {
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+    
+    i {
+      color: #990D35;
+    }
+
+    .footer-message {
+      display: flex;
+      justify-self: center;
+      margin-top: 2%;
+      text-align: center;
+      max-width: 600px;
+      font-size: clamp(10px, 3vw, 16px);
+      color: #333;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <h2>Application Form</h2>
+    <form>
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label for="name"><i class="fas fa-user"></i> Full Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="mb-3">
+        <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Enter 10-digit phone number" pattern="[0-9]{10}" required>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email"><i class="fas fa-envelope"></i> Email ID</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+      </div>
+
+      <!-- Course -->
+      <div class="mb-3">
+        <label for="course"><i class="fas fa-book"></i> Select Course</label>
+        <select class="form-select" id="course" required>
+          <option selected disabled value="">Choose your course</option>
+          <option>Web Development</option>
+          <option>Tally with GST</option>
+          <option>Graphic Designing</option>
+          <option>Digital Marketing</option>
+          <option>AI & Data Science</option>
+        </select>
+      </div>
+
+      <!-- Location -->
+      <div class="mb-3">
+        <label for="location"><i class="fa-solid fa-location-dot"></i> Location</label>
+        <input type="text" class="form-control" id="location" placeholder="Enter your location" required>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-3">
+        <label for="message"><i class="fas fa-comment"></i> Any Questions? (Optional)</label>
+        <textarea id="message" name="message" placeholder="Type your message here..." class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Qualification Note -->
+      <div class="mb-3">
+        <strong>Note:</strong> Minimum Qualification Required: 12th Pass
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-submit">Submit Application</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="footer-message" style="margin: 20px auto; max-width: 600px;">
+    Thank you for choosing us!<br>
+    We'll contact you within 24 hours of your enrollment submission.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/a825dfb9ae.js" crossorigin="anonymous"></script>
+</body>
+</html>

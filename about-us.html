@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Computech Skills Academy</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="index.b.css">
+        <link rel="shortcut icon" href="./PICTURES/csa logo.png" type="image/png">
+        <style>
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+             
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #a10032 0%, #7a0026 100%);
+            }
+
+            .hero {
+                background: linear-gradient(rgb(149, 0, 0)), url('your-banner-image.jpg') center/cover;
+                color: white;
+                padding: 100px 0;
+                text-align: center;
+            }
+            .hero-btn {
+                
+                background-color: #f8f3f3;
+                font-weight: 500;
+                flex: 1 1 clamp(120px, 40%, 200px); 
+                text-align: center;
+                font-size: clamp(0.8rem, 2.5vw, 1.2rem); 
+                padding: clamp(0.5rem, 1.5vw, 0.8rem) clamp(0.8rem, 2vw, 1.5rem);
+
+            }
+
+           @media (max-width: 520px) {
+              .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            
+              }
+              .hero-btn {
+                margin: 0.5rem 0;
+                width: 80%;
+              }
+            }
+
+            .card-hover {
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                border: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .card-hover::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(161, 0, 50, 0.1), transparent);
+                transition: left 0.8s ease;
+            }
+
+            .card-hover:hover::before {
+                left: 100%;
+            }
+
+            .card-hover:hover {
+                transform: translateY(-6px) scale(1.02);
+                box-shadow: 0 25px 50px rgba(161, 0, 50, 0.25);
+            }
+
+            .course-card {
+                border-left: 4px solid #a10032;
+                background-color: #f8f9fa;
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .course-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 4px;
+                height: 100%;
+                background: linear-gradient(180deg, rgba(161, 0, 50, 0.1), rgba(196, 0, 74, 0.1));
+
+                transition: width 0.3s ease;
+            }
+
+            .course-card:hover::before {
+                width: 100%;
+                opacity: 0.1;
+            }
+
+            .course-card:hover {
+                transform: translateX(10px);
+                box-shadow: 0 8px 25px rgba(161, 0, 50, 0.15);
+                background-color: white;
+            }
+            .link{
+                text-decoration: none;
+                color: #a10032;
+                font-weight: 600;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .link2 {
+                color: white;
+                font-weight: 600;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+            .link2:hover {
+                color: #a10032;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+            }
+
+            .hero-section {
+                padding: 4rem 0;
+            }
+
+
+            .btn-white-custom {
+                background-color: white;
+                color: #a10032;
+                border: 2px solid white;
+                font-weight: 600;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                margin: 2px;
+            }
+
+            .btn-white-custom::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(161, 0, 50, 0.1), transparent);
+                transition: left 0.5s ease;
+            }
+
+            .btn-white-custom:hover::before {
+                left: 100%;
+            }
+
+            .btn-white-custom:hover {
+                background-color: #f8f9fa;
+                color: #a10032;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(161, 0, 50, 0.3);
+            }
+
+            .btn-outline-white {
+                color: white;
+                border: 2px solid white;
+                font-weight: 600;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .btn-outline-white::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: white;
+                transition: left 0.4s ease;
+                z-index: -1;
+            }
+
+            .btn-outline-white:hover::before {
+                left: 0;
+            }
+
+            .btn-outline-white:hover {
+                color: #a10032;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+            }
+
+            @keyframes shimmer {
+                0% {
+                    background-position: -200% 0;
+                }
+                100% {
+                    background-position: 200% 0;
+                }
+            }
+
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.6s ease-out;
+            }
+
+            .animate-on-scroll.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            @media (max-width: 768px) {
+                .hero-section {
+                    padding: 2rem 0;
+                }
+                
+                .section-padding {
+                    padding: 2rem 0;
+                }
+                
+                h1 {
+                    font-size: 2.5rem;
+                }
+                
+                h2 {
+                    font-size: 2rem;
+                }
+                 #vision {
+                    flex-direction: column-reverse;
+                    align-items: flex-start;
+                }
+                
+            }
+
+
+            .map-container {
+                height: 200px; 
+                width: 30%;
+            }
+
+            .map-container iframe {
+                height: 100%;
+                width: 100%;
+            }
+
+            @media (max-width: 768px) {
+                .map-container {
+                height: 150px;
+                width: 100%;
+                padding: 3%;
+                padding-left: 6%;
+                }
+            }
+            
+           
+            @media (max-width: 500px) {
+                .map-container {
+                height: 8.5rem;
+                width: 100%;
+                
+                }
+            }
+             @media (min-width:10px) and (max-width: 600px) {
+
+                #button{
+                    font-size: 1em;
+                }
+            }
+            
+            .text{
+                text-align: justify;
+            }
+            #OurGoals .col-3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 1.5rem;
+            }
+
+            @media (min-width: 10px) and (max-width: 578px) {
+                #OurGoals .col-3[style] {
+                    width: 15% !important;
+                    min-width: 70px !important;
+                    height: 5% !important;
+                    margin-right: 1rem;
+                    margin-bottom: 0.5rem;
+                    display: block !important;
+                }
+                #OurGoals .img-goal,
+                #OurGoals .col-3 img {
+                    width: 100% !important;
+                    height: 100% !important;
+                    min-width: 70px !important;
+                    min-height: 70px !important;
+                    max-width: none !important;
+                    max-height: none !important;
+                    object-fit: contain;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
+            }
+
+            .back-to-top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                background-color: #fff8e8;
+                color: #a10032;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 999;
+            }
+
+            .back-to-top:hover {
+                background-color: #990d35;
+                color: #fff8e8;
+                transform: translateY(-3px);
+            }
+
+            .back-to-top.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        
+   <nav class="navbar navbar-expand-lg custom-navbar container mt-3 container-fluid" >
+    <div class="container-fluid d-flex align-items-center">
+
+      <a class="navbar-brand d-flex align-items-center me-3" href="home.html">
+        <img src="./PICTURES/logo.png" alt="Logo" />
+      </a>
+      <div class="d-flex flex-column me-auto">
+        <span class="brand-text">Computech Skills</span>
+        <span class="brand-text">Academy</span>
+      </div>
+
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <ul class="navbar-nav align-items-lg-center mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html">Courses</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="Gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="enroll-now.html">Enroll Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+        <section class="hero" >
+                <div class="container-fluid px-0 hero-buttons" >
+                    
+                    <h1 class="display-4" style="font-weight: 400;">Empowering Your Digital Future</h1>
+                    <p class="lead" style="font-weight: 400;">Join your digital career with CSA</p>
+                    <a href="#intro" class="btn btn-warning btn-lg m-3 hero-btn card-hover" id="button" style="background-color: #f8f3f3; font-weight: 500;">Introduction</a>
+                    <a href="#vision" class="btn btn-warning btn-lg m-3 hero-btn card-hover" id="button" style="background-color: #f8f3f3; font-weight: 500;">Vision</a>
+                    <a href="#mission" class="btn btn-warning btn-lg m-3 hero-btn card-hover" id="button" style="background-color: #f8f3f3; font-weight: 500;">Mission</a>
+                    <a href="#OurGoals" class="btn btn-warning btn-lg m-3 hero-btn card-hover" id="button" style="background-color: #f8f3f3; font-weight: 500;">Our Goals</a>
+                </div>
+        </section>
+        <div class="container-fluid px-0 section-padding">
+            <div class="row mx-0">
+                <div class=" col-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold text-dark mb-4">About Our Academy</h2>
+                    <p class="lead text-muted" style="text-align: justify;font-weight: 500;font-size: clamp(0.9rem, 1.3vw, 2rem);">
+                        Located in the heart of Losal (Sikar), Rajasthan, Computech Skills Academy is a beacon of hope for the youth of our small town. We understand that geographical limitations shouldn't restrict access to quality education and career opportunities. Our academy, proudly operated by the RP Pansari Jan Seva Trust, is dedicated to bridging the digital divide and empowering young minds with essential 21st-century skills.
+                    </p>
+                </div>
+            </div>
+            <div id="intro" class="container row w-100 m-3 rounded-5 py-3 media" style="background-color: #fdf0e4; color: #990d35; max-width: 90%; display: flex; align-self: center; justify-self: center;">
+                <div class="col-md-3" style="display: flex;">
+                    <img src="./PICTURES/logo.png" alt="logo" class="img-fluid m-auto rounded" style="width: 10em;">
+                </div>
+                <div class="text col-md-8 px-2 py-4">
+                    <h2 class="text-start" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: clamp(1rem, 3.5vw, 2rem); font-weight: 600;">Introduction</h2>
+                    <p style="font-weight: 400; font-size: clamp(0.9rem, 1.3vw, 2rem);">
+                        Computech Skills Academy is a forward-thinking technical training institute dedicated to equipping students with in-demand digital skills such as 
+                        Web Designing, Graphic Designing, and Digital Marketing. <br>
+                        Our mission is to deliver comprehensive, career-focused training that empowers students to pursue high-paying jobs, freelancing opportunities, 
+                        and entrepreneurial ventures in today's competitive market. <br>
+                        At Computech, we are committed to providing high-quality, practical education at affordable costs, ensuring accessibility for all learners. 
+                        By fostering technical proficiency and digital confidence, 
+                        we aim to prepare students for lasting success in the rapidly evolving digital landscape.     
+                    </p>
+                </div>
+            </div>
+            
+            <div id="vision" class="container row w-100 m-3 rounded-5 py-3 media" style="background-color: #fdf0e4; color: #990d35; max-width: 90%; display: flex; align-self: center; justify-self: center;">
+                <div class="text col-md-8 px-2 py-4">
+                    <h2 class="text-start" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: clamp(1rem, 3.5vw, 2rem); font-weight: 600;">Vision</h2>
+                    <p style="font-weight: 400; font-size: clamp(0.9rem, 1.3vw, 2rem);">
+                        At Computech Skills Academy, our vision is to create transformative opportunities that empower individuals to 
+                        learn, grow, and succeed in every aspect of life. <br>
+                        We are dedicated to equipping every student with essential digital and technical skills, enabling them to
+                        become self-reliant, confident, and future-ready. <br>
+                        The Academy strives to provide training in cutting-edge, high-demand technologies while offering expert 
+                        guidance to help students build successful and rewarding careers in the digital era.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img src="./PICTURES/vision.jpg" alt="vision" class="rounded img-fluid h-75 w-100 my-5">
+                </div>
+            </div>
+
+            <div id="mission" class="container row w-100 m-3 rounded-5 py-3 media" style="background-color: #fdf0e4; color: #990d35; max-width: 90%; display: flex; align-self: center; justify-self: center;">
+                <div class="col-md-4">
+                    <img src="./PICTURES/mission.jpg" alt="mission" class="w-100 my-5 rounded img-fluid h-75">
+                </div>
+                <div class="text col-md-8 px-2 py-4">
+                    <h2 class="text-start ps-3" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: clamp(1rem, 3.5vw, 2rem); font-weight: 600;">Mission</h2>
+                    <p>
+                        <ul style="font-weight: 400; font-size: clamp(0.9rem, 1.3vw, 2rem);">
+                            <li>To provide high-quality, industry-relevant education that prepares learners for real-world challenges.</li>
+                            <li>To offer comprehensive, skill-based training that enables students to secure rewarding and competitive career opportunities.</li>
+                            <li>To advance digital literacy and empower individuals to succeed in an increasingly technology-driven world.</li>
+                            <li>To ensure education is both affordable and accessible, creating opportunities for learners from all backgrounds.</li>
+                            <li>To nurture innovation, critical thinking, and problem-solving skills that drive personal and professional growth.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goals Section -->
+        <section class="section-padding" style="background-color: #f8f3f3;" id="OurGoals">
+            <div class="container-fluid px-0 m-0">
+                <div class="row mx-0">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold text-dark mb-5 text-center">Our Goals</h2>
+                        <!-- image 1 -->
+                        <div class="row g-4">
+                            <div class="col-3" style="width: 15%; height: 5%;">
+                                <img src="./PICTURES/Goal1.png" alt="Accessibility" class="img-fluid img-goal" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="col-9">
+                                <div class="d-flex align-items-start">
+                                    <div>
+                                        <h3 class="h5 fw-bold text-dark mb-2">Accessibility & Affordability</h3>
+                                        <p class="text-muted">Make quality tech education accessible to every family in Losal through affordable pricing and flexible payment options.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- image 2 -->
+                            <div class="col-3" style="width: 15%; height: 5%;">
+                                <img src="./PICTURES/Goal2.png" alt="Skills" class="img-fluid" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="col-9">
+                                <div class="d-flex align-items-start">
+                                    <div>
+                                        <h3 class="h5 fw-bold text-dark mb-2">Skill Development</h3>
+                                        <p class="text-muted">Equip students with practical, industry-relevant skills that directly translate to employment opportunities and entrepreneurship.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- image 3 -->
+                            <div class="col-3" style="width: 15%; height: 5%;">
+                                <img src="./PICTURES/Goal3.png" alt="Community" class="img-fluid" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="col-9">
+                                <div class="d-flex align-items-start">
+                                    <div>
+                                        <h3 class="h5 fw-bold text-dark mb-2">Community Impact</h3>
+                                        <p class="text-muted">Create a ripple effect of positive change by empowering individuals who will contribute to the economic development of Losal.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- image 4 -->
+                            <div class="col-3" style="width: 15%; height: 15%;">
+                                <img src="./PICTURES/Goal4.png" alt="Digital Literacy" class="img-fluid" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="col-9">
+                                <div class="d-flex align-items-start">
+                                    <div>
+                                        <h3 class="h5 fw-bold text-dark mb-2">Digital Literacy</h3>
+                                        <p class="text-muted">Bridge the digital divide by ensuring our youth are not left behind in the rapidly evolving digital economy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Our Academy Provides -->
+        <section class="section-padding bg-white">
+            <div class="container-fluid px-0">
+                <div class="row mx-0">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="display-5 fw-bold text-dark mb-3">What Our Academy Provides</h2>
+                        <p class="lead text-muted" style="font-weight: 400;">Comprehensive support and resources for success</p>
+                    </div>
+                </div>
+
+                <div class="row g-4 mx-0">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <h3 class="h5 fw-bold text-dark mb-3">Quality Education</h3>
+                            <p class="text-muted mb-0">Expert-designed curriculum in Web Designing, Graphic Designing, and Digital Marketing with hands-on training</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <h3 class="h5 fw-bold text-dark mb-3">Affordable Learning</h3>
+                            <p class="text-muted mb-0">Budget-friendly course fees with flexible payment options, making quality education accessible to all families in Losal</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <h3 class="h5 fw-bold text-dark mb-3">Career Support</h3>
+                            <p class="text-muted mb-0">Job placement assistance, portfolio development, and guidance to help you succeed in the digital economy</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <h3 class="h5 fw-bold text-dark mb-3">Modern Infrastructure</h3>
+                            <p class="text-muted mb-0">Well-equipped computer labs with latest software and high-speed internet connectivity for optimal learning experience</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <h3 class="h5 fw-bold text-dark mb-3">Experienced Faculty</h3>
+                            <p class="text-muted mb-0">Learn from industry professionals and certified trainers who bring real-world experience to the classroom</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <h3 class="h5 fw-bold text-dark mb-3">Community Impact</h3>
+                            <p class="text-muted mb-0">Be part of a movement that's transforming Losal by building digital skills and creating local employment opportunities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="gradient-bg text-white section-padding">
+            <div class="container-fluid px-0">
+                <div class="row mx-0">
+                    <div class="col-12 text-center">
+                        <h2 class="display-6 fw-bold mb-3">Ready to Transform Your Future?</h2>
+                        <p class="lead mb-4" style="font-weight: 400;">Join many students who have already started their journey with CSA</p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                            <a class="btn btn-white-custom btn-lg px-4 link" href="enroll-now.html">Enroll Now</a>
+                            <a class="btn btn-outline-white btn-lg px-4 link2" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <button class="back-to-top" title="Go to top">
+            <i class="fa-solid fa-angles-up"></i>
+        </button>
+
+        <!-- Footer Start -->
+        <footer>
+            <div class="container-fluid m-0 p-0 border-top border-black" style="background-color: #fdf0e4;">
+                <div class="row p-0 w-100 d-flex justify-content-center align-items-center">
+                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                        <img src="./PICTURES/logo1.png" alt="logo" class="img-fluid" style="width: 10em;">
+                    </div>
+                    <div class="col-md-4 g-3 d-flex justify-content-center align-items-center border-start border-end text-center border-black border-md-end border-md-start border-0 border-sm-0" style="height: 50%;">
+                        Phone no.:+91 82907 35843 | +91 82907 35849 <br>
+                        E-mail: computechskillsacademy@gmail.com<br>
+                        Address: Gandhi Smriti Pustakalaya Bhawan <br>
+                        Main Bazar Losal (Sikar-Rajasthan) <br>
+                        Pincode-332025
+                    </div>
+
+                    <div class="map-container col-md-4 rounded-5">
+                        <iframe class="rounded-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3542.295375104221!2d74.91269828097015!3d27.397713015411025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396b6109832fbedb%3A0xd7b44a38dea88b81!2scomputech%20skills%20academy!5e0!3m2!1sen!2sus!4v1754213584070!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="footer-text m-0 p-1">
+                    <p class="mb-0">Building tomorrow's tech professionals today</p>
+                    <p>&copy; 2025 Computech Skills Academy. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+</script>
+<script>
+  // Back to Top Button Functionality
+  const backToTopButton = document.querySelector('.back-to-top');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('active');
+    } else {
+      backToTopButton.classList.remove('active');
+    }
+  });
+  
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a825dfb9ae.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design Course - Computech Skills Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./PICTURES/csa logo.png" type="image/png">
+    <link rel="stylesheet" href="index.b.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --success-gradient: linear-gradient(135deg, #a10032 0%, #8b0000 100%);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .hero-section {
+            padding: 100px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .design-hero { background: var(--success-gradient); }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 20px;
+        }
+        
+        .design-icon { background: var(--success-gradient); }
+        
+        .curriculum-item {
+            background: #f8f9fa;
+            border-left: 4px solid #a10032;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .curriculum-item:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stats-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #a10032 0%, #d4004f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-section {
+            padding: 80px 0;
+            background: var(--success-gradient);
+            color: white;
+        }
+        
+        .btn-custom {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom1 {
+            text-align: center;
+            padding-top: clamp(5px, 10px, 12px);
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            width: clamp(150px, 180px, 200px);
+            height: clamp(30px, 40px, 50px);
+        }
+        
+        .btn-custom:hover, .btn-custom1:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #fff8e8;
+            color: #a10032;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background-color: #990d35;
+            color: #fff8e8;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section design-hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Creative Graphic Design</h1>
+                    <p class="lead mb-4">Unleash your creativity and master professional graphic design tools and techniques to create stunning visual communications.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <span class="badge bg-light text-dark px-3 py-2">4 Months Duration</span>
+                        <span class="badge bg-light text-dark px-3 py-2">Creative Portfolio</span>
+                        <span class="badge bg-light text-dark px-3 py-2">Industry Tools</span>
+                    </div>
+                    <a href="enroll-now.html" class="btn btn-light btn-custom1">Enroll now</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <i class="fas fa-palette" style="font-size: clamp(8rem, 15vw, 16rem); opacity: 0.3; padding-top: 3%;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="display-5 fw-bold mb-3">Master Professional Design Tools & Techniques</h2>
+                    <p class="lead text-muted" style="font-weight: 500;">From concept to creation - complete design mastery</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon design-icon">
+                           <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h4>Adobe Creative Suite</h4>
+                        <p>Master Photoshop, Illustrator, InDesign, After Effects, and Premiere Pro for complete creative control.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon design-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Brand Identity Design</h4>
+                        <p>Create compelling logos, brand guidelines, and complete visual identity systems for businesses.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon design-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>UI/UX Design</h4>
+                        <p>Design user-friendly interfaces, wireframes, prototypes, and engaging user experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Complete Design Curriculum</h2>
+                    <p class="lead text-muted" style="font-weight: 500;">4 months of intensive creative training</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-eye me-2"></i>Design Fundamentals</h5>
+                        <p>Color theory, typography, composition, visual hierarchy, and design principles</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fab fa-adobe me-2"></i>Adobe Photoshop Mastery</h5>
+                        <p>Photo editing, digital painting, compositing, and advanced retouching techniques</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-vector-square me-2"></i>Adobe Illustrator</h5>
+                        <p>Vector graphics, logo design, illustrations, and scalable artwork creation</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-book me-2"></i>Adobe InDesign</h5>
+                        <p>Layout design, brochures, magazines, books, and print publication design</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-trademark me-2"></i>Brand Identity Design</h5>
+                        <p>Logo creation, brand guidelines, business cards, and complete brand systems</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-desktop me-2"></i>Web & UI Design</h5>
+                        <p>Website mockups, mobile app interfaces, user experience design, and prototyping</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-video me-2"></i>Motion Graphics</h5>
+                        <p>After Effects, animation principles, video editing, and dynamic visual content</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-briefcase me-2"></i>Portfolio Development</h5>
+                        <p>Professional portfolio creation, client presentation, and freelancing strategies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <h5>Months Training</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <h5>Adobe Tools</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="stat-item">
+                        <div class="stat-number">Expert</div>
+                        <h5>Design Mentors</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Transform Your Creative Vision Into Reality</h2>
+            <p class="lead mb-4">Join the next generation of professional graphic designers</p>
+            <a href="enroll-now.html" class="btn btn-light btn-custom me-3 mb-2">Enroll Now</a>
+            <a href="contact.html" class="btn btn-light btn-custom me-3 mb-2">Contact Us</a>
+        </div>
+    </section>
+
+    <button class="back-to-top" title="Go to top">
+        <i class="fa-solid fa-angles-up"></i>
+    </button>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script>
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

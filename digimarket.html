@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Course - Computech Skills Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./PICTURES/csa logo.png" type="image/png">
+    <link rel="stylesheet" href="index.b.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #a10032 0%, #d4004f 100%);
+            --secondary-gradient: linear-gradient(135deg, #a10032 0%, #c41e3a 100%);
+            --success-gradient: linear-gradient(135deg, #a10032 0%, #8b0000 100%);
+            --warning-gradient: linear-gradient(135deg, #a10032 0%, #b22222 100%);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .hero-section {
+            padding: 100px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .marketing-hero { background: var(--secondary-gradient); }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 20px;
+        }
+        
+        .marketing-icon { background: var(--secondary-gradient); }
+        
+        .curriculum-item {
+            background: #f8f9fa;
+            border-left: 4px solid #a10032;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .curriculum-item:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stats-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #a10032 0%, #d4004f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-section {
+            padding: 80px 0;
+            background: var(--secondary-gradient);
+            color: white;
+        }
+        
+        .btn-custom {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom1 {
+            text-align: center;
+            padding-top: clamp(5px, 10px, 12px);
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            width: clamp(150px, 180px, 200px);
+            height: clamp(30px, 40px, 50px);
+        }
+        
+        .btn-custom:hover, .btn-custom1:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #fff8e8;
+            color: #a10032;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background-color: #990d35;
+            color: #fff8e8;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- Digital Marketing Course -->
+    <!-- Hero Section -->
+    <section class="hero-section marketing-hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Digital Marketing Mastery</h1>
+                    <p class="lead mb-4">Become a digital marketing expert and drive business growth through strategic online marketing campaigns and data-driven insights.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <span class="badge bg-light text-dark px-3 py-2">4 Months Duration</span>
+                        <span class="badge bg-light text-dark px-3 py-2">Industry Certified</span>
+                        <span class="badge bg-light text-dark px-3 py-2">Live Campaigns</span>
+                    </div>
+                    <a href="enroll-now.html" class="btn btn-light btn-custom1">Start Learning</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line" style="font-size: clamp(8rem, 15vw, 16rem); opacity: 0.3; padding-top: 3%;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="display-5 fw-bold mb-3">Master Every Aspect of Digital Marketing</h2>
+                    <p class="lead text-muted" style="font-weight: 500;">Comprehensive training covering all digital marketing channels</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon marketing-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h4>Google Ads & Analytics</h4>
+                        <p>Master Google Ads, Analytics, Search Console, and Tag Manager for comprehensive campaign management and tracking.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon marketing-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <h4>Social Media Marketing</h4>
+                        <p>Create engaging campaigns across Facebook, Instagram, LinkedIn, Twitter, and emerging social platforms.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon marketing-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>SEO & Content Strategy</h4>
+                        <p>Optimize websites for search engines, create compelling content, and build authority through strategic link building.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Comprehensive Digital Marketing Curriculum</h2>
+                    <p class="lead text-muted" style="font-weight: 500;">4 months of hands-on digital marketing training</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-bullhorn me-2"></i>Digital Marketing Fundamentals</h5>
+                        <p>Marketing strategy, funnel optimization, and conversion tracking</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fab fa-google me-2"></i>Google Ads Mastery</h5>
+                        <p>Search, Display, Shopping, Video ads, and campaign optimization</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fab fa-facebook me-2"></i>Social Media Advertising</h5>
+                        <p>Facebook Ads, Instagram marketing, LinkedIn campaigns, and social media strategy</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-search me-2"></i>Search Engine Optimization</h5>
+                        <p>On-page SEO, technical SEO, link building, and local search optimization</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-envelope me-2"></i>Email Marketing</h5>
+                        <p>Email automation, segmentation, A/B testing, and newsletter optimization</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-chart-bar me-2"></i>Analytics & Reporting</h5>
+                        <p>Google Analytics, data analysis, ROI measurement, and performance reporting</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-pen-fancy me-2"></i>Content Marketing</h5>
+                        <p>Content strategy, copywriting, video marketing, and brand storytelling</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5><i class="fas fa-rocket me-2"></i>Growth Strategies</h5>
+                        <p>Conversion optimization, influencer partnerships, and scaling strategies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <h5>Months Training</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <h5>Marketing Tools</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="stat-item">
+                        <div class="stat-number">Expert</div>
+                        <h5>Instructors</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Launch Your Digital Marketing Career Today</h2>
+            <p class="lead mb-4">Master the skills that drive business growth in the digital age</p>
+            <a href="enroll-now.html" class="btn btn-light btn-custom me-3 mb-2">Enroll Now</a>
+            <a href="contact.html" class="btn btn-light btn-custom me-3 mb-2">Contact Us</a>
+        </div>
+    </section>
+
+    <button class="back-to-top" title="Go to top">
+        <i class="fa-solid fa-angles-up"></i>
+    </button>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script>
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

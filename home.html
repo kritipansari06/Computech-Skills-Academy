@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computech Skills Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="index.b.css">
+  <link rel="shortcut icon" href="./PICTURES/csa logo.png" type="image/png">
+  <style>
+    .main .bg-white {
+      border: #a10032 2px solid;
+    }
+    .our-mot {
+      background-color: #a10032;
+    }
+    .font-size {
+      font-size: 1.1rem;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    .testimonial-section .section-title {
+      color: #fff;
+    }
+    .section-title{
+      padding-bottom: 20px;
+    }
+    .gallery-section .section-title {
+      color: #000;
+    }
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .btn.lrn_more {
+      background-color: #990d35;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .lrn_more:hover {
+     background-color: #7a0025;
+    color: white;
+      transform: translateY(-3px);
+    }
+    .founder-box img {
+      height: 250px;
+      width: 250px;
+      object-fit: cover;
+      border: 4px solid #a10032;
+    }
+    .founder-quote {
+      color: #a10032;
+      font-weight: bold;
+      margin-bottom: 3%;
+      font-size: 110%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .footer-logo {
+      width: 10em;
+    }
+    .footer-contact {
+      height: 50%;
+    }
+    .map-container iframe {
+      border-radius: 2rem;
+      border: 0;
+    }
+    .footer-text {
+      margin: 0;
+      padding: 1rem 0 0 0;
+      text-align: center;
+    }
+    .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff8e8;
+    color: #a10032;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background-color: #990d35;
+    color: #fff8e8;
+    transform: translateY(-3px);
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+    footer .container-fluid {
+      background-color: #fdf0e4;
+    }
+    @media (max-width: 768px) {
+      .founder-box img {
+        height: 180px;
+        width: 180px;
+      }
+      .footer-logo {
+        width: 7em;
+      }
+    }
+
+    .testimonial-section {
+      padding: 40px 0;
+      background-color: #990d35;
+    }
+  </style>
+</head>
+<body>
+  
+   <nav class="navbar navbar-expand-lg custom-navbar container mt-3 container-fluid" >
+    <div class="container-fluid d-flex align-items-center">
+
+      <a class="navbar-brand d-flex align-items-center me-3" href="home.html">
+        <img src="./PICTURES/logo.png" alt="Logo" />
+      </a>
+      <div class="d-flex flex-column me-auto">
+        <span class="brand-text">Computech Skills</span>
+        <span class="brand-text">Academy</span>
+      </div>
+
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <ul class="navbar-nav align-items-lg-center mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html">Courses</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="Gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="enroll-now.html">Enroll Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./PICTURES/c1.png" class="d-block w-100" alt="Banner 1">
+      </div>
+      <div class="carousel-item">
+        <img src="./PICTURES/c2.png" class="d-block w-100" alt="Banner 2">
+      </div>
+      <div class="carousel-item">
+        <img src="./PICTURES/c3.png" class="d-block w-100" alt="Banner 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev" >
+      <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="main mx-2">
+    <div class="bg-white rounded-4 p-4 p-md-5">
+        <h2 class="text-center our-mot text-white py-2 rounded-bottom-4">Our Motto</h2>
+        
+        <p class="font-size mt-4">
+            R P Pansari Jan Seva Trust has been passionate about creating a modern Computer oriented Skills Centre and spread of computer and digital literacy amongst the students and more particularly the students of Government Schools at Losal where most of them are from compromising family background. The sole aim and object behind such a move was a step towards growth and development of the students and the youth who are prepared to equip themselves with the right knowledge and expertise; empower themselves and harness their skills to successfully establish themselves and thrive in their real life.
+        </p>
+
+        <p class="font-size">
+            This dream is now being materialised by setting up a boutique Computech Skills Academy by the Trust with the support of and in the premises owned by Shree Gandhi Smriti Pustakalaya located in the heart of the town to make the Students and the Youth of Losal and its surrounding villages fully tech savvy and proficient in all sorts of Computer and Digital Applications and Technologies and promote e-learning in them as a habit as if it has been a part of their regular curriculum.
+        </p>
+
+        <p class="font-size">
+            The Academy owes a lot to Ambuja Foundation which has been helping, assisting and guiding the Trust since a long time for this project in every respect but it could be translated to reality now only in 2025. Though it took a long time to start this, but it is well said that it's better to be late than never. Thanks to the Authorities of Ambuja Foundation once again.
+        </p>
+    </div>
+  </div>
+
+  <section class="testimonial-section">
+    <div class="container">
+      <h2 class="section-title text-white">What Our Students Say</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-card card_1 h-100">
+            <p class="testimonial-text">"I learned Web Development at Computech skills Academy, and today, The course structure is excellent, covering HTML, CSS, JavaScript, and React in a hands-on way. The teachers' support and real-world projects prepared me for the industry."</p>
+            <p class="testimonial-author">- Krishan Kumar</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card card_2 h-100">
+            <p class="testimonial-text">"The Digital Marketing Course at Computech skills Academy gave me all the tools I need to succeed in this field. From SEO to Social Media Marketing, Google Ads to Content Marketing - I now feel fully prepared to build my career in digital marketing."</p>
+            <p class="testimonial-author">- Nirmal Swami </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card card_3 h-100">
+            <p class="testimonial-text">"If you want to build a career in Graphic Designing, Computech skills Academy is the best! I mastered Adobe Photoshop, Illustrator, and Canva here. The project-based approach helped me build a strong portfolio."</p>
+            <p class="testimonial-author">- Arpita Swami </p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5 ">
+          <a href="review.html" class="btn btn-block w-50 text-center c-more mt-5">
+            See more reviews
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+   
+  <div class="founder-box p-4 my-5">
+    <div class="row align-items-center ">
+      <div class="col-md-4 text-center pb-5 ">
+        <img src="./PICTURES/founder.png" alt="Founder Image" class="img-fluid rounded-circle">
+      </div>
+      <div class="col-md-8 pt-5">
+        <h3>
+          Founder: Mr. R P Pansari <br>
+          <small>(founder of R P Pansari Jan Seva Trust)</small>
+        </h3>
+        <ul class="font-size">
+          <li>Gold Medalist Commerce Graduate, University of Rajasthan</li>
+          <li>Over 50 years of experience in Finance, Law, Taxation, and Industry Management</li>
+          <li>Senior Executive in the House of Birlas (almost 50 years)</li>
+          <li>Speaker & Participant at National and International Conferences</li>
+          <li>Director and Advisor to several Companies / Philanthropic Institutions</li>
+        </ul>
+        <div class="container-fluid mx-0">
+          <div class="founder-quote">
+            <div>"Life is a journey of struggles, we need to lead it</div>      
+            <div class="text-end">with Skills, Hard Work & Dedication."</div>
+            <div class="text-end">-R.P. Pansari</div>                                       
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" title="Go to top">
+    <i class="fa-solid fa-angles-up"></i>
+  </button>
+
+  <footer class="m-0">
+    <div class="container-fluid m-0 p-0 border-top border-black">
+      <div class="row d-flex justify-content-center align-items-center px-0">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <img src="./PICTURES/logo1.png" alt="logo" class="img-fluid footer-logo">
+        </div>
+        <div class="col-md-4 g-3 d-flex justify-content-center align-items-center border-start border-end border-md-end border-md-start border-0 border-sm-0 text-center border-black footer-contact">
+          Phone no.:+91 82907 35843 | +91 82907 35849 <br>
+          E-mail: computechskillsacademy@gmail.com<br>
+          Address: Gandhi Smriti Pustakalaya Bhawan <br>
+          Main Bazar Losal (Sikar-Rajasthan) <br>
+          Pincode-332025
+        </div>
+        <div class="map-container col-md-4 mt-3 rounded-5">
+          <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3542.295375104221!2d74.91269828097015!3d27.397713015411025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396b6109832fbedb%3A0xd7b44a38dea88b81!2scomputech%20skills%20academy!5e0!3m2!1sen!2sus!4v1754213584070!5m2!1sen!2sus" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="footer-text">
+        <p class="mb-0">Building tomorrow's tech professionals today</p>
+        <p>&copy; 2025 Computech Skills Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/a825dfb9ae.js" crossorigin="anonymous"></script>
+  <script>
+    // Back to Top Button Functionality
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('active');
+      } else {
+        backToTopButton.classList.remove('active');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

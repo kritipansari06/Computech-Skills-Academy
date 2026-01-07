@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Reviews - Computech Skills Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.b.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./PICTURES/csa logo.png" type="image/png">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff8e8 0%, #f5f0e0 100%);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+       
+        .hero-section {
+            background: linear-gradient(135deg, #a10032 0%, #8b002a 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+       
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+       
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+       
+        .batch-section {
+            padding: 60px 0;
+        }
+       
+        .batch-title {
+            color: #a10032;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+       
+        .batch-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #a10032;
+            border-radius: 2px;
+        }
+       
+        .review-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(161, 0, 50, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+       
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(161, 0, 50, 0.15);
+            border-color: #a10032;
+        }
+       
+        .student-name {
+            color: #a10032;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+       
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+       
+        .review-text {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+       
+        .batch-icon {
+            width: 60px;
+            height: 60px;
+            background: #a10032;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+       
+        .stats-section {
+            background: #a10032;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+       
+        .stat-item {
+            margin-bottom: 30px;
+        }
+       
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+        }
+       
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #fff8e8;
+            color: #a10032;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background-color: #990d35;
+            color: #fff8e8;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg custom-navbar container mt-3 container-fluid" >
+    <div class="container-fluid d-flex align-items-center">
+
+      <a class="navbar-brand d-flex align-items-center me-3" href="home.html">
+        <img src="./PICTURES/logo.png" alt="Logo" />
+      </a>
+      <div class="d-flex flex-column me-auto">
+        <span class="brand-text">Computech Skills</span>
+        <span class="brand-text">Academy</span>
+      </div>
+
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <ul class="navbar-nav align-items-lg-center mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html">Courses</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="Gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="enroll-now.html">Enroll Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Student Success Stories</h1>
+            <p class="hero-subtitle">Hear what our graduates have to say about their journey at Computech Skills Academy</p>
+        </div>
+    </section>
+
+    <!-- Web Development Batch -->
+    <section class="batch-section">
+        <div class="container">
+            <div class="batch-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h2 class="batch-title">Web Development (Frontend)</h2>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Kriti Pansari</h4>
+                        <p class="review-text">"As someone completely new to tech, I was nervous about starting my coding journey. But the supportive faculty and comprehensive curriculum at Computech made my transition incredibly smooth. The instructors break down complex concepts into digestible parts and provide hands-on practice that builds confidence. I highly recommend Computech to anyone looking to start their tech career!"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Abhishek Swami</h4>
+                        <p class="review-text">"The course structure at Computech is excellent and covers everything from basic HTML/CSS to advanced JavaScript frameworks like React. What impressed me most was the logical progression of topics and the practical projects that reinforce each concept. The support system here is outstanding - instructors are always available for doubt clearing sessions, making the entire learning experience both enjoyable and highly effective."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Samiksha Kabra</h4>
+                        <p class="review-text">"Computech provided me with the perfect foundation in web development, covering both frontend and backend technologies comprehensively. The course is well-structured with a perfect balance of theory and practical implementation. What sets them apart is their dedicated placement assistance team that helped me prepare for interviews, build a strong portfolio, and ultimately land my first job in the tech industry successfully."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Nikunj Agarwal</h4>
+                        <p class="review-text">"The learning environment at Computech is absolutely fantastic! The small batch sizes ensure personalized attention from instructors, allowing for interactive discussions and immediate feedback. The curriculum is updated with industry trends, and I'm now confident working with React, JavaScript, Node.js, and other modern web technologies. The hands-on projects gave me real-world experience that employers value."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Krishankant Sharma</h4>
+                        <p class="review-text">"What an amazing learning experience this has been! The instructors at Computech are incredibly knowledgeable and genuinely supportive of each student's progress. I started with absolutely zero coding knowledge and was worried about keeping up. But through their structured approach and patient guidance, I went from complete beginner to confidently building responsive, mobile-friendly websites. The transformation in just a few months is remarkable!"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Shivani Dhadhich</h4>
+                        <p class="review-text">"The practical projects and industry exposure provided at Computech are absolutely invaluable for career preparation. Beyond just learning to code, I developed critical problem-solving abilities, project management skills, and learned to work with version control systems like Git. The real-world scenarios and client-based projects taught me how to handle deadlines, communicate with stakeholders, and deliver quality solutions - skills essential in the professional world."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Kapil Bhargav</h4>
+                        <p class="review-text">"Joining Computech was the best decision I made for my career transition! The faculty members are not only experienced industry professionals but are always ready to help with doubts and provide career guidance. The comprehensive portfolio I built during the course, featuring multiple live projects and modern technologies, helped me stand out in interviews and secure multiple job offers from reputable companies. The confidence I gained here was game-changing!"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Sandeep Goswami</h4>
+                        <p class="review-text">"The frontend development course at Computech completely transformed my career trajectory. Coming from a non-technical background, I was amazed at how the hands-on projects and expert guidance from industry veterans helped me master complex concepts. The curriculum is perfectly designed to meet current industry needs, covering everything from responsive design to modern JavaScript frameworks. Within months of completion, I landed my dream job at a leading tech company!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graphic Design Batch -->
+    <section class="batch-section" style="background: #fff8e8;">
+        <div class="container">
+            <div class="batch-icon">
+                <i class="fas fa-palette"></i>
+            </div>
+            <h2 class="batch-title">Graphic Designing</h2>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Mohit Jatoliya</h4>
+                        <p class="review-text">"The instructors at Computech are seasoned industry professionals who shared invaluable insights from their years of experience in graphic design and branding. The course structure perfectly balances design theory - covering color psychology, typography principles, and composition rules - with extensive hands-on practice in professional design software like Adobe Creative Suite. This combination helped me understand not just how to use tools, but when and why to apply specific design principles."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Diksha Khetan</h4>
+                        <p class="review-text">"The graphic design program at Computech is incredibly comprehensive - from typography and color theory to complete branding and identity design, every aspect was covered thoroughly. The practical assignments, including real client briefs and design challenges, helped me understand actual client requirements and develop strategic design thinking. Working on diverse projects like logo design, packaging, and digital marketing materials gave me a well-rounded portfolio that impressed potential employers."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Junaid Qureshi</h4>
+                        <p class="review-text">"The graphic design course at Computech covers both digital and print design comprehensively, which is crucial in today's versatile design market. From web graphics and social media content to brochures and business cards, I learned to work across all mediums. The real-world projects and client interaction sessions were particularly valuable - they taught me how to present concepts, handle feedback, and manage revisions professionally, preparing me exceptionally well for the demands of the design industry."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Arshad Khatri</h4>
+                        <p class="review-text">"Computech successfully transformed my raw passion for art into polished, professional design skills that are market-ready. The constructive feedback and personalized guidance from experienced instructors helped me refine my creative abilities significantly while learning industry-standard workflows. They taught me how to channel creativity strategically, balance artistic vision with client needs, and develop a unique design style that stands out in the competitive creative market."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Palak Khetan</h4>
+                        <p class="review-text">"Computech's design program is comprehensive and perfectly industry-focused, covering everything from fundamental design principles to advanced digital illustration techniques. The dedicated portfolio development sessions were particularly helpful - they taught me how to curate my best work, present projects with compelling case studies, and showcase my design process professionally. The portfolio I built became my strongest asset in landing freelance clients and full-time opportunities."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Sohel Khatri</h4>
+                        <p class="review-text">"What an excellent and transformative learning experience! The creative projects at Computech consistently challenged me to think outside the box and explore innovative design solutions. From conceptual thinking to execution, every assignment pushed my creative boundaries. The business aspects of design - pricing, client communication, and project management - were also covered thoroughly. I'm now successfully working as a freelance designer with a steady client base, thanks entirely to the comprehensive skills and confidence I gained here."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Arpita Swami</h4>
+                        <p class="review-text">"The Graphic Design course opened up a whole new world of creativity for me. With expert guidance, I learned Adobe Creative Suite in depth and got the chance to apply my skills through practical projects. The course was very well-structured, blending design theory with hands-on practice, which helped me improve my creativity and technical knowledge simultaneously. My design skills improved dramatically, and the constant feedback from mentors gave me the confidence to take on real-world projects and pursue graphic design as a career."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Farhan Khatri</h4>
+                        <p class="review-text">"The design fundamentals taught here are solid. From logo design to print media, I learned everything needed to start my design career confidently."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Marketing Batch -->
+    <section class="batch-section">
+        <div class="container">
+            <div class="batch-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h2 class="batch-title">Digital Marketing</h2>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Deepak Kumawat</h4>
+                        <p class="review-text">"The course covers everything from content marketing to email campaigns. The hands-on experience with real tools and platforms made learning engaging and practical."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Sameer Mugal</h4>
+                        <p class="review-text">"Excellent program with industry-standard curriculum! The certification and portfolio projects helped me transition into digital marketing successfully. Highly recommended!"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Priyanshu Saini</h4>
+                        <p class="review-text">"Computech's digital marketing program is top-notch! The analytics and data-driven approach taught here helped me optimize campaigns and achieve better results for clients."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Nirmal Swami</h4>
+                        <p class="review-text">"The digital marketing course is incredibly comprehensive! From SEO to social media marketing, every module was practical and industry-relevant. Great ROI on my investment!"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="review-card">
+                        <h4 class="student-name">Devesh Soni</h4>
+                        <p class="review-text">"Learning Google Ads and Facebook marketing with live campaigns was amazing. The practical approach helped me understand the nuances of digital advertising effectively."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button class="back-to-top" title="Go to top">
+        <i class="fa-solid fa-angles-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
